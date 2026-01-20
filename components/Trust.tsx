@@ -1,43 +1,39 @@
-import { Star, BadgeCheck, Users } from "lucide-react";
+import { Star } from "lucide-react";
 
 export default function Trust({ t }: { t: any }) {
   return (
     <section id="confianza" className="py-14 sm:py-16">
       <div className="container-pad">
-        <h2 className="text-3xl font-semibold tracking-tight">{t.trust.title}</h2>
+        <div className="max-w-2xl">
+          <h2 className="text-3xl font-extrabold tracking-tight text-slate-900">
+            {t.trust?.title ?? "Confianza"}
+          </h2>
+          <p className="mt-2 text-sm leading-6 text-slate-600">
+            {t.trust?.subtitle ??
+              "Prueba social y señales de credibilidad para reforzar la decisión del visitante."}
+          </p>
+        </div>
 
-        <div className="mt-8 grid gap-5 lg:grid-cols-3">
-          <div className="card p-6">
-            <div className="flex items-center gap-3">
-              <Star className="h-5 w-5 text-[rgba(214,180,106,.95)]" />
-              <div className="font-semibold">Reseñas</div>
+        <div className="mt-8 grid gap-5 md:grid-cols-3">
+          {[1, 2, 3].map((i) => (
+            <div key={i} className="card p-6">
+              <div className="flex items-center gap-1">
+                {[1, 2, 3, 4, 5].map((s) => (
+                  <Star key={s} className="h-4 w-4 text-[color:var(--brand2)]" />
+                ))}
+              </div>
+              <div className="mt-3 text-sm leading-6 text-slate-600">
+                {t.trust?.sampleText ??
+                  "Testimonio de cliente (coloca aquí reseñas reales). Texto corto, claro y creíble."}
+              </div>
+              <div className="mt-4 text-sm font-semibold text-slate-900">
+                {t.trust?.sampleName ?? "Nombre Apellido"}
+              </div>
+              <div className="text-xs text-slate-500">
+                {t.trust?.sampleRole ?? "Cliente"}
+              </div>
             </div>
-            <p className="mt-2 text-sm leading-6 text-[rgba(244,242,237,.72)]">
-              Placeholder para Google Reviews o testimonios en texto.
-            </p>
-          </div>
-
-          <div className="card p-6">
-            <div className="flex items-center gap-3">
-              <Users className="h-5 w-5 text-[rgba(214,180,106,.95)]" />
-              <div className="font-semibold">Aliados</div>
-            </div>
-            <p className="mt-2 text-sm leading-6 text-[rgba(244,242,237,.72)]">
-              Placeholder para logos de clientes / aliados (cuando los tengas).
-            </p>
-          </div>
-
-          <div className="card p-6">
-            <div className="flex items-center gap-3">
-              <BadgeCheck className="h-5 w-5 text-[rgba(214,180,106,.95)]" />
-              <div className="font-semibold">Redes enlazadas</div>
-            </div>
-            <ul className="mt-2 space-y-2 text-sm text-[rgba(244,242,237,.72)]">
-              {t.trust.bullets.map((b: string) => (
-                <li key={b}>• {b}</li>
-              ))}
-            </ul>
-          </div>
+          ))}
         </div>
       </div>
     </section>
