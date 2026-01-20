@@ -1,27 +1,26 @@
 export type Lang = "es" | "en";
 
-export const brand = {
-  name: "Consultoría Inmobiliaria Integral",
-  agent: "Celia Cubilla",
-  role: "Asesora Inmobiliaria",
-  location: "Ciudad de Panamá · Bellavista · Calle 41"
-};
-
 export const copy: Record<Lang, any> = {
   es: {
-    nav: { services: "Servicios", why: "Por qué elegirnos", trust: "Confianza", contact: "Contacto" },
+    nav: { services: "Servicios", featured: "Propiedades", why: "Por qué elegirnos", trust: "Confianza", contact: "Contacto" },
 
     hero: {
       badge: "Diagnóstico inmobiliario integral gratuito",
-      headline: "Decisiones inmobiliarias seguras, con respaldo integral",
-      sub:
-        "Acompañamos personas e inversionistas locales y extranjeros en la compra, venta, alquiler e inversión inmobiliaria, con asesoría financiera, contable y legal.",
-      cta1: "Solicitar diagnóstico",
+      headline: "Asesoría inmobiliaria integral en Panamá",
+      sub: "Compra, venta, alquiler e inversión con respaldo profesional.",
+      cta1: "Obtén tu diagnóstico gratuito ahora",
       cta2: "Hablar por WhatsApp"
     },
 
+    featured: {
+      title: "Propiedades destacadas",
+      sub: "Explora opciones seleccionadas. Pregunta por disponibilidad y detalles.",
+      cta: "Consultar por WhatsApp",
+      view: "Ver detalles"
+    },
+
     services: {
-      title: "Nuestros Servicios",
+      title: "Servicios",
       items: [
         "Administración y venta de propiedades",
         "Alquiler de propiedades",
@@ -33,27 +32,25 @@ export const copy: Record<Lang, any> = {
     why: {
       title: "Por qué elegirnos",
       items: [
-        { t: "Enfoque integral real", d: "Unimos criterio inmobiliario con asesoría financiera, contable y legal para decisiones mejor sustentadas." },
-        { t: "Claridad y acompañamiento profesional", d: "Proceso claro, comunicación directa y pasos definidos desde el diagnóstico hasta el cierre." },
-        { t: "Confianza para clientes locales y extranjeros", d: "Experiencia acompañando inversiones y procesos para Panamá, con enfoque transparente y responsable." }
+        { t: "Enfoque integral", d: "Criterio inmobiliario + apoyo financiero, contable y legal para decisiones mejor sustentadas." },
+        { t: "Proceso claro", d: "Comunicación directa y pasos definidos desde el diagnóstico hasta el cierre." },
+        { t: "Atención bilingüe", d: "Asesoría para clientes locales y extranjeros en Panamá." }
       ],
-      guarantee: "Garantía / respaldo: acompañamiento profesional, proceso claro y asesoría responsable en cada etapa."
+      guarantee: "Respaldo: acompañamiento profesional, proceso claro y asesoría responsable en cada etapa."
     },
 
     trust: {
-      title: "Confianza y presencia digital",
+      title: "Confianza",
       bullets: [
         "Testimonios (placeholder)",
         "Reseñas de Google (placeholder)",
-        "Logos de aliados / clientes (placeholder)",
-        "Redes enlazadas: Instagram, Facebook, LinkedIn y WhatsApp Business"
+        "Aliados / clientes (placeholder)"
       ]
     },
 
     contact: {
       title: "Contacto",
-      subtitle:
-        "Para poder brindarte una asesoría adecuada indícanos el motivo de tu consulta.",
+      subtitle: "Para poder brindarte una asesoría adecuada indícanos el motivo de tu consulta.",
       form: {
         name: "Nombre completo",
         email: "Correo",
@@ -73,19 +70,25 @@ export const copy: Record<Lang, any> = {
   },
 
   en: {
-    nav: { services: "Services", why: "Why us", trust: "Trust", contact: "Contact" },
+    nav: { services: "Services", featured: "Featured", why: "Why us", trust: "Trust", contact: "Contact" },
 
     hero: {
       badge: "Free comprehensive real-estate diagnosis",
-      headline: "Make confident real-estate decisions with end-to-end support",
-      sub:
-        "We guide local and international clients through buying, selling, renting, and investing in Panama, backed by financial, accounting, and legal advisory.",
-      cta1: "Request diagnosis",
+      headline: "End-to-end real-estate advisory in Panama",
+      sub: "Buy, sell, rent & invest with professional support.",
+      cta1: "Get your free diagnosis now",
       cta2: "Chat on WhatsApp"
     },
 
+    featured: {
+      title: "Featured properties",
+      sub: "Handpicked options. Ask for availability and details.",
+      cta: "Ask on WhatsApp",
+      view: "View details"
+    },
+
     services: {
-      title: "Our Services",
+      title: "Services",
       items: [
         "Property management and sales",
         "Property rentals",
@@ -97,20 +100,19 @@ export const copy: Record<Lang, any> = {
     why: {
       title: "Why choose us",
       items: [
-        { t: "Truly integrated approach", d: "Real-estate decisions strengthened with financial, accounting, and legal advisory." },
-        { t: "Clarity and professional guidance", d: "Clear process, direct communication, and defined next steps from diagnosis to closing." },
-        { t: "Trusted by local & international clients", d: "Transparent, responsible advisory tailored to Panama’s market realities." }
+        { t: "Integrated approach", d: "Real-estate + financial, accounting and legal support for stronger decisions." },
+        { t: "Clear process", d: "Direct communication and defined next steps from diagnosis to closing." },
+        { t: "Bilingual support", d: "Advisory for local and international clients in Panama." }
       ],
-      guarantee: "Guarantee / support: professional guidance, a clear process, and responsible advisory at every stage."
+      guarantee: "Support: professional guidance, clear process and responsible advisory at every stage."
     },
 
     trust: {
-      title: "Trust signals",
+      title: "Trust",
       bullets: [
         "Testimonials (placeholder)",
         "Google reviews (placeholder)",
-        "Partner/client logos (placeholder)",
-        "Linked social profiles: Instagram, Facebook, LinkedIn and WhatsApp Business"
+        "Partners/clients (placeholder)"
       ]
     },
 
@@ -127,7 +129,7 @@ export const copy: Record<Lang, any> = {
         reasons: ["Buying", "Selling", "Renting", "Investing", "Management", "Other"]
       },
       confirm:
-        "Thank you for reaching out. We received your request and will confirm the next step for your comprehensive real-estate diagnosis shortly."
+        "Thank you for reaching out. We received your request and will confirm the next step for your comprehensive diagnosis shortly."
     },
 
     footer: {
