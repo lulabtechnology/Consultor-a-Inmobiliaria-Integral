@@ -59,12 +59,28 @@ html, body {
   background-repeat: no-repeat;
 }
 @media (max-width: 640px){
+/* FOOTER full-bleed con imagen distinta en mobile (OVERLAY MÁS SUAVE para que se vea la foto) */
+.footer-bg{
+  background-image:
+    /* overlay más suave */
+    linear-gradient(180deg, rgba(11,12,16,.35), rgba(11,12,16,.55)),
+    url("/images/footer-desktop.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+@media (max-width: 640px){
   .footer-bg{
     background-image:
-      linear-gradient(180deg, rgba(11,12,16,.92), rgba(11,12,16,.88)),
+      linear-gradient(180deg, rgba(11,12,16,.30), rgba(11,12,16,.55)),
       url("/images/footer-mobile.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
   }
 }
+
 
 /* UI helpers */
 .badge{
