@@ -3,6 +3,7 @@
 import { useMemo, useState } from "react";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
+import FeaturedProperties from "@/components/FeaturedProperties";
 import Services from "@/components/Services";
 import WhyUs from "@/components/WhyUs";
 import Trust from "@/components/Trust";
@@ -18,9 +19,13 @@ export default function Landing() {
     <main>
       <Header lang={lang} setLang={setLang} t={t} />
       <Hero lang={lang} t={t} />
+
+      <FeaturedProperties lang={lang} t={t} />
+
       <div className="container-pad">
-        <div className="my-10 h-px w-full gold-line opacity-60" />
+        <div className="my-6 h-px w-full brand-line opacity-70" />
       </div>
+
       <Services t={t} />
       <WhyUs t={t} />
       <Trust t={t} />
