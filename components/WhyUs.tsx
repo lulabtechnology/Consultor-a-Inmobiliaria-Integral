@@ -1,37 +1,46 @@
-import { ShieldCheck } from "lucide-react";
+import { BadgeCheck, Languages, Scale } from "lucide-react";
 
 export default function WhyUs({ t }: { t: any }) {
+  const items = t.why?.items ?? [];
+  const icons = [BadgeCheck, Scale, Languages];
+
   return (
     <section id="porque" className="py-14 sm:py-16">
       <div className="container-pad">
-        <div className="flex items-end justify-between gap-6">
-          <h2 className="text-3xl font-semibold tracking-tight">{t.why.title}</h2>
+        <div className="max-w-2xl">
+          <h2 className="text-3xl font-extrabold tracking-tight text-slate-900">
+            {t.why?.title ?? "Por qué elegirnos"}
+          </h2>
+          <p className="mt-2 text-sm leading-6 text-slate-600">
+            {t.why?.subtitle ?? "Ventajas claras para tomar decisiones con confianza."}
+          </p>
         </div>
 
-        <div className="mt-8 grid gap-5 lg:grid-cols-3">
-          {t.why.items.map((x: any) => (
-            <div key={x.t} className="card p-6">
-              <div className="text-lg font-semibold text-[rgba(244,242,237,.95)]">{x.t}</div>
-              <p className="mt-2 text-sm leading-6 text-[rgba(244,242,237,.72)]">{x.d}</p>
-            </div>
-          ))}
+        <div className="mt-8 grid gap-5 md:grid-cols-3">
+          {items.map((x: any, idx: number) => {
+            const Icon = icons[idx] ?? BadgeCheck;
+            return (
+              <div key={idx} className="card p-6">
+                <div className="flex items-start gap-3">
+                  <div className="rounded-2xl bg-[rgba(11,59,46,.10)] p-3">
+                    <Icon className="h-6 w-6 text-[color:var(--brand)]" />
+                  </div>
+                  <div>
+                    <div className="text-base font-extrabold text-slate-900">{x.t}</div>
+                    <div className="mt-2 text-sm leading-6 text-slate-600">{x.d}</div>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
         </div>
 
-        <div className="mt-6 card p-6">
-          <div className="flex items-start gap-3">
-            <span className="mt-0.5 inline-flex h-10 w-10 items-center justify-center rounded-2xl border border-[rgba(214,180,106,.24)] bg-[rgba(214,180,106,.10)]">
-              <ShieldCheck className="h-5 w-5 text-[rgba(214,180,106,.95)]" />
-            </span>
-            <div>
-              <div className="text-sm font-semibold text-[rgba(244,242,237,.92)]">
-                {t.why.guarantee}
-              </div>
-              <div className="mt-1 text-xs text-[rgba(244,242,237,.60)]">
-                (Texto alineado al “respaldo/garantía” del formulario.)
-              </div>
-            </div>
+        {t.why?.guarantee && (
+          <div className="mt-8 card p-6">
+            <div className="text-sm font-semibold text-slate-900">Respaldo</div>
+            <div className="mt-2 text-sm leading-6 text-slate-600">{t.why.guarantee}</div>
           </div>
-        </div>
+        )}
       </div>
     </section>
   );
