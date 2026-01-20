@@ -191,7 +191,8 @@ export default function Contact({ t }: { t: any }) {
             </div>
 
             <div className="mt-4 text-xs text-[rgba(244,242,237,.55)]">
-              Mensaje de confirmación basado en el formulario proporcionado. :contentReference[oaicite:11]{index=11}
+              Mensaje de confirmación basado en el formulario proporcionado.
+
             </div>
           </div>
         </div>
