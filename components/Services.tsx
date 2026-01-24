@@ -1,6 +1,8 @@
 import { CheckCircle2 } from "lucide-react";
 
 export default function Services({ t }: { t: any }) {
+  const items: string[] = t.services?.items ?? [];
+
   return (
     <section id="servicios" className="py-14 sm:py-16">
       <div className="container-pad">
@@ -8,14 +10,15 @@ export default function Services({ t }: { t: any }) {
           <h2 className="text-3xl font-extrabold tracking-tight text-slate-900">
             {t.services?.title ?? "Servicios"}
           </h2>
-          <p className="mt-2 text-sm leading-6 text-slate-600">
+
+          <p className="mt-2 text-sm leading-6 text-slate-700">
             {t.services?.subtitle ??
-              "Gestión inmobiliaria integral para que tomes decisiones seguras y bien estructuradas."}
+              "Consultoría Inmobiliaria Integral para que tomes decisiones seguras y bien estructuradas!"}
           </p>
         </div>
 
         <div className="mt-8 grid gap-4 md:grid-cols-2">
-          {(t.services?.items ?? []).map((item: string, i: number) => (
+          {items.map((item: string, i: number) => (
             <div key={i} className="card p-5">
               <div className="flex items-start gap-3">
                 <div className="mt-0.5 rounded-full bg-[rgba(11,59,46,.10)] p-2">
