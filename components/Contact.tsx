@@ -2,21 +2,21 @@
 
 import { useMemo, useState } from "react";
 import { links } from "@/lib/links";
-import { Mail, Phone, Globe, MessageCircle } from "lucide-react";
+import { Mail, Globe, MessageCircle } from "lucide-react";
 
 export default function Contact({ t }: { t: any }) {
   const reasons: string[] = t.contact?.form?.reasons ?? [
     "Compra",
     "Venta",
     "Alquiler",
-    "Inversión",
     "Administración",
+    "Inversión",
     "Otro"
   ];
 
   const [sent, setSent] = useState(false);
 
-  const waBase = links.wa; // wa.me/...
+  const waBase = links.wa;
   const email = links.email;
   const website = links.website;
 
@@ -38,7 +38,7 @@ export default function Contact({ t }: { t: any }) {
     const msg = String(fd.get("message") ?? "");
 
     const text =
-      `Hola, quiero una asesoría inmobiliaria.\n\n` +
+      `Hola, me gustaría agendar un diagnóstico inicial (15 minutos).\n\n` +
       `Nombre: ${name}\n` +
       `Teléfono: ${phone}\n` +
       `Correo: ${emailV}\n` +
@@ -58,15 +58,15 @@ export default function Contact({ t }: { t: any }) {
             <h2 className="text-3xl font-extrabold tracking-tight text-slate-900">
               {t.contact?.title ?? "Contacto"}
             </h2>
-            <p className="mt-2 text-sm leading-6 text-slate-600">
+            <p className="mt-2 text-sm leading-6 text-slate-700">
               {t.contact?.subtitle ??
-                "Para poder brindarte una asesoría adecuada indícanos el motivo de tu consulta."}
+                "Diagnóstico inicial de orientación general (15 minutos) enfocado en aspectos inmobiliarios. Para un análisis más profundo, ofrecemos consultorías personalizadas."}
             </p>
 
             <div className="mt-6 grid gap-3">
               <a className="btn btn-ghost w-full justify-start" href={links.wa} target="_blank" rel="noreferrer">
                 <MessageCircle className="h-5 w-5 text-[color:var(--brand)]" />
-                WhatsApp: +507 6474-6565
+                WhatsApp: {links.phoneDisplay}
               </a>
 
               <a className="btn btn-ghost w-full justify-start" href={`mailto:${email}`}>
@@ -86,14 +86,14 @@ export default function Contact({ t }: { t: any }) {
               <form onSubmit={onSubmit} className="grid gap-4">
                 <div className="grid gap-4 sm:grid-cols-2">
                   <div>
-                    <label className="text-xs font-semibold text-slate-700">
+                    <label className="text-xs font-semibold text-slate-800">
                       {t.contact?.form?.name ?? "Nombre completo"}
                     </label>
                     <input className="input mt-2" name="name" required />
                   </div>
 
                   <div>
-                    <label className="text-xs font-semibold text-slate-700">
+                    <label className="text-xs font-semibold text-slate-800">
                       {t.contact?.form?.phone ?? "Teléfono"}
                     </label>
                     <input className="input mt-2" name="phone" required />
@@ -102,14 +102,14 @@ export default function Contact({ t }: { t: any }) {
 
                 <div className="grid gap-4 sm:grid-cols-2">
                   <div>
-                    <label className="text-xs font-semibold text-slate-700">
+                    <label className="text-xs font-semibold text-slate-800">
                       {t.contact?.form?.email ?? "Correo"}
                     </label>
                     <input className="input mt-2" name="email" type="email" required />
                   </div>
 
                   <div>
-                    <label className="text-xs font-semibold text-slate-700">
+                    <label className="text-xs font-semibold text-slate-800">
                       {t.contact?.form?.reason ?? "Motivo principal"}
                     </label>
                     <select className="input mt-2" name="reason" required defaultValue={reasons[0]}>
@@ -123,19 +123,19 @@ export default function Contact({ t }: { t: any }) {
                 </div>
 
                 <div>
-                  <label className="text-xs font-semibold text-slate-700">
+                  <label className="text-xs font-semibold text-slate-800">
                     {t.contact?.form?.message ?? "Cuéntanos un poco más (opcional)"}
                   </label>
                   <textarea className="input mt-2 min-h-[120px]" name="message" />
                 </div>
 
                 <button className="btn btn-primary w-full" type="submit">
-                  {t.contact?.form?.send ?? "Enviar solicitud"}
-                  <Phone className="h-5 w-5" />
+                  {t.contact?.form?.send ?? "Enviar por WhatsApp"}
+                  <MessageCircle className="h-5 w-5" />
                 </button>
 
                 {sent && (
-                  <div className="mt-2 text-sm text-slate-600">
+                  <div className="mt-2 text-sm text-slate-700">
                     {confirmText}
                   </div>
                 )}
