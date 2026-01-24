@@ -14,17 +14,26 @@ export default function Header({
   t: any;
 }) {
   return (
-    <header className="sticky top-0 z-50 border-b border-[rgba(15,23,42,.10)] bg-[rgba(255,255,255,.78)] backdrop-blur-xl">
+    <header className="sticky top-0 z-50 border-b border-[rgba(15,23,42,.10)] bg-[rgba(255,255,255,.86)] backdrop-blur-xl">
       <div className="container-pad py-3">
         <div className="flex items-center justify-between gap-3">
           <a href="#top" className="flex items-center gap-3 min-w-0">
-            <div className="h-10 w-10 shrink-0 overflow-hidden rounded-2xl border border-[rgba(15,23,42,.10)] bg-white" />
+            {/* LOGO */}
+            <div className="h-10 w-10 shrink-0 overflow-hidden rounded-2xl border border-[rgba(15,23,42,.10)] bg-white">
+              <img
+                src="/images/logo.png"
+                alt="Logo"
+                className="h-full w-full object-contain p-1"
+                loading="lazy"
+              />
+            </div>
+
             <div className="min-w-0 leading-tight">
               <div className="truncate text-sm font-extrabold tracking-tight text-slate-900">
                 Consultoría Inmobiliaria Integral
               </div>
               <div className="truncate text-xs text-slate-600">
-                Panamá · Bellavista · Calle 41
+                Ciudad de Panamá · Área de Bella Vista
               </div>
             </div>
           </a>
