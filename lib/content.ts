@@ -76,16 +76,16 @@ export const copy: Record<Lang, any> = {
             "Gracias a la experiencia, fue extraordinario el proceso de venta de la vivienda, su orientación, conocimiento, seguridad y confianza, bajo la responsabilidad de la Licenciada Clelia Cubilla, el proceso se logró en un excelente tiempo, su manejo con los clientes deja mucho que decir de su profesionalismo; por esta razón le expreso mi gratitud, por la cual la felicito. Éxitos por tan excelente profesionalismo."
         },
         {
-          name: "María P.",
+          name: "Liliana Cortes.",
           role: "Cliente",
           text:
-            "El acompañamiento fue claro y muy profesional. Me ayudaron a entender números, opciones y riesgos antes de decidir. Todo el proceso se manejó con transparencia y orden."
+            "Clelia me asistió en la venta de un apartamento en El Cangrejo de manera sumamente eficiente. No solo estuvo pendiente de todas las visitas necesarias y me recomendó a los mejores compradores para lograr la mejor venta, sino que también gestionó todos los trámites requeridos con abogados, bancos y entidades en Panamá, además de coordinar los detalles finales de entrega a los compradores, ya que yo no estaba en el país. Sin duda, la recomiendo al 100%."
         },
         {
-          name: "Carlos R.",
+          name: "Brad Suggs",
           role: "Cliente",
           text:
-            "Excelente gestión y seguimiento. Sentí control del proceso en cada etapa: documentación, validaciones y coordinación. Un enfoque integral que realmente aporta confianza."
+            "El año pasado, Clelia mostró mi apartamento, encontró arrendatarios confiables y ayudó a preparar el Pent-house para la renta. Su paciencia fue notable y me apoyó en cada paso de la negociación. Hasta este momento no he tenido ningún inconveniente con mis arrendatarios e inclusive ella me ha hecho seguimiento de algo adicional que me pueda ayudar con mi propiedad. Estoy muy agradecido con ella."
         }
       ]
     },
