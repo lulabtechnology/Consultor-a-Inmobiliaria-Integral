@@ -7,26 +7,24 @@ export default function Footer({ t }: { t: any }) {
       <div className="h-px w-full gold-line opacity-60" />
 
       <div className="container-pad py-10">
-        <div className="card p-6">
-          <div className="text-lg font-semibold text-[rgba(244,242,237,.95)]">
-            Celia Cubilla
+        {/* Card tipo glass para que la foto SI se vea */}
+        <div className="rounded-3xl border border-[rgba(15,23,42,.10)] bg-[rgba(255,255,255,.82)] backdrop-blur-xl p-6 shadow-sm">
+          <div className="text-sm font-semibold text-slate-700">Consultoría Inmobiliaria Integral</div>
+
+          <div className="mt-2 text-lg font-extrabold text-slate-900">
+            Clelia Cubilla
           </div>
-          <div className="mt-1 text-sm text-[rgba(214,180,106,.95)]">
-            Asesora Inmobiliaria
+          <div className="mt-1 text-sm font-semibold text-[color:var(--brand)]">
+            Fundadora-Consultora Inmobiliaria
           </div>
 
-          <p className="mt-4 text-sm leading-6 text-[rgba(244,242,237,.74)]">
-            Consultoría inmobiliaria integral para clientes locales y extranjeros en Panamá.
+          <p className="mt-4 text-sm leading-6 text-slate-700">
+            Acompañamiento inmobiliario integral para compra, venta, alquiler y administración de propiedades, con análisis financiero, respaldo legal y soluciones de seguro.
           </p>
 
-          {/* Contacto simple */}
+          {/* Contacto */}
           <div className="mt-6 grid gap-3 sm:grid-cols-3">
-            <a
-              className="btn btn-ghost w-full px-3 py-3 text-xs"
-              href={links.wa}
-              target="_blank"
-              rel="noreferrer"
-            >
+            <a className="btn btn-ghost w-full px-3 py-3 text-xs" href={links.wa} target="_blank" rel="noreferrer">
               <Phone className="h-4 w-4" />
               WhatsApp
             </a>
@@ -42,7 +40,7 @@ export default function Footer({ t }: { t: any }) {
             </a>
           </div>
 
-          {/* Redes (simple, en una sola fila) */}
+          {/* Redes */}
           <div className="mt-6 flex flex-wrap items-center gap-2">
             <a className="btn btn-ghost px-3 py-2 text-xs" href={links.instagram} target="_blank" rel="noreferrer">
               <Instagram className="h-4 w-4" />
@@ -59,8 +57,8 @@ export default function Footer({ t }: { t: any }) {
           </div>
         </div>
 
-        <div className="mt-6 text-center text-xs text-[rgba(244,242,237,.55)]">
-          © {new Date().getFullYear()} Consultoría Inmobiliaria Integral. {t.footer.rights}
+        <div className="mt-6 text-center text-xs text-slate-700">
+          © {new Date().getFullYear()} Consultoría Inmobiliaria Integral. {t.footer?.rights ?? "Todos los derechos reservados."}
         </div>
       </div>
     </footer>
