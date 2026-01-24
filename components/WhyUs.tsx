@@ -11,7 +11,7 @@ export default function WhyUs({ t }: { t: any }) {
           <h2 className="text-3xl font-extrabold tracking-tight text-slate-900">
             {t.why?.title ?? "Por qué elegirnos"}
           </h2>
-          <p className="mt-2 text-sm leading-6 text-slate-600">
+          <p className="mt-2 text-sm leading-6 text-slate-700">
             {t.why?.subtitle ?? "Ventajas claras para tomar decisiones con confianza."}
           </p>
         </div>
@@ -27,7 +27,7 @@ export default function WhyUs({ t }: { t: any }) {
                   </div>
                   <div>
                     <div className="text-base font-extrabold text-slate-900">{x.t}</div>
-                    <div className="mt-2 text-sm leading-6 text-slate-600">{x.d}</div>
+                    <div className="mt-2 text-sm leading-6 text-slate-700">{x.d}</div>
                   </div>
                 </div>
               </div>
@@ -38,7 +38,7 @@ export default function WhyUs({ t }: { t: any }) {
         {t.why?.guarantee && (
           <div className="mt-8 card p-6">
             <div className="text-sm font-semibold text-slate-900">Respaldo</div>
-            <div className="mt-2 text-sm leading-6 text-slate-600">{t.why.guarantee}</div>
+            <div className="mt-2 text-sm leading-6 text-slate-700">{t.why.guarantee}</div>
           </div>
         )}
       </div>
