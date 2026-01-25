@@ -32,9 +32,7 @@ export default function Header({
               <div className="truncate text-sm font-extrabold tracking-tight text-slate-900">
                 Consultoría Inmobiliaria Integral
               </div>
-              <div className="truncate text-xs text-slate-600">
-                Ciudad de Panamá · Área de Bella Vista
-              </div>
+            
             </div>
           </a>
 
