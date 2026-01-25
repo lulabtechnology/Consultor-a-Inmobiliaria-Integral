@@ -2,37 +2,42 @@
 @tailwind components;
 @tailwind utilities;
 
-/* === PALETA CLARA (marca: verde botella → azul) === */
+/* === PALETA (blanco + verde marca) === */
 :root{
-  --bg: #EAF3EF;          /* gris muy claro */
-  --surface: #ffffff;      /* blanco */
-  --text: #0f172a;         /* slate-900 */
-  --muted: #475569;        /* slate-600 */
+  /* Fondo base BLANCO + tintes verdes */
+  --bg: #ffffff;
+  --bgTint: #EAF3EF;
+
+  --surface: #ffffff;
+  --text: #0f172a;
+  --muted: #475569;
   --line: rgba(15,23,42,.12);
 
-  --brand: #0B3B2E;        /* verde botella */
-  --brand2: #0B3A6A;       /* azul */
-  --brandLine: rgba(11,59,46,.20);
+  /* Marca (verde exacto que indicaste) */
+  --brand: #2a5c58;
+  --brand2: #0B3A6A; /* azul (si lo sigues usando en detalles) */
+  --brandLine: rgba(42,92,88,.22);
 
   --shadow: 0 18px 50px rgba(2,6,23,.08);
-    /* WhatsApp */
+
+  /* WhatsApp (para botones y links clicables) */
   --wa: #25D366;
   --waHover: #1EBE5B;
   --waActive: #1AA64F;
   --waRing: rgba(37, 211, 102, .22);
-
 }
 
 html, body{
   height: 100%;
   color: var(--text);
+
+  /* Fondo blanco + verde (marca) */
   background:
-    radial-gradient(1000px 700px at 10% 0%, rgba(11,59,46,.20), transparent 55%),
-    radial-gradient(900px 650px at 90% 15%, rgba(11,59,46,.14), transparent 60%),
-    linear-gradient(180deg, rgba(11,59,46,.06), rgba(11,59,46,.02) 55%, rgba(11,59,46,.08)),
+    radial-gradient(1100px 760px at 12% 0%, rgba(42,92,88,.22), transparent 58%),
+    radial-gradient(1000px 720px at 88% 10%, rgba(42,92,88,.14), transparent 62%),
+    linear-gradient(180deg, rgba(42,92,88,.06), rgba(255,255,255,1) 50%, rgba(42,92,88,.07)),
     var(--bg);
 }
-
 
 .container-pad{
   width: min(1100px, calc(100% - 2.25rem));
@@ -41,24 +46,28 @@ html, body{
 
 /* Línea sutil con marca */
 .brand-line{
-  background: linear-gradient(90deg, transparent, rgba(11,59,46,.35), rgba(11,58,106,.35), transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(42,92,88,.38),
+    rgba(42,92,88,.22),
+    transparent
+  );
 }
 
 /* =========================================================
-   HERO: opción por defecto con IMAGEN (desktop/mobile)
-   Si usas video (en Hero.tsx) el overlay se mantiene.
+   HERO: imagen (desktop/mobile)
    ========================================================= */
 .hero-wrap{
   position: relative;
   overflow: hidden;
 }
 
-/* Fondo con imagen + degradado claro (para que se vea pro y confiable) */
 .hero-bg{
   background-image:
-    radial-gradient(900px 600px at 18% 30%, rgba(11,59,46,.16), transparent 55%),
-    radial-gradient(900px 600px at 85% 10%, rgba(11,58,106,.14), transparent 60%),
-    linear-gradient(180deg, rgba(255,255,255,.72), rgba(255,255,255,.94)),
+    radial-gradient(900px 600px at 18% 30%, rgba(42,92,88,.18), transparent 55%),
+    radial-gradient(900px 600px at 85% 10%, rgba(42,92,88,.12), transparent 60%),
+    linear-gradient(180deg, rgba(255,255,255,.75), rgba(255,255,255,.94)),
     url("/images/hero-desktop.jpg");
   background-size: cover;
   background-position: center;
@@ -68,19 +77,19 @@ html, body{
 @media (max-width: 640px){
   .hero-bg{
     background-image:
-      radial-gradient(700px 520px at 50% 20%, rgba(11,59,46,.14), transparent 60%),
-      radial-gradient(700px 520px at 50% 0%, rgba(11,58,106,.12), transparent 65%),
-      linear-gradient(180deg, rgba(255,255,255,.70), rgba(255,255,255,.94)),
+      radial-gradient(700px 520px at 50% 20%, rgba(42,92,88,.16), transparent 60%),
+      radial-gradient(700px 520px at 50% 0%, rgba(42,92,88,.10), transparent 65%),
+      linear-gradient(180deg, rgba(255,255,255,.72), rgba(255,255,255,.94)),
       url("/images/hero-mobile.jpg");
   }
 }
 
 /* =========================================================
-   FOOTER: imagen visible (overlay suave)
+   FOOTER: imagen visible (overlay blanco + verde)
    ========================================================= */
 .footer-bg{
   background-image:
-    linear-gradient(180deg, rgba(255,255,255,.40), rgba(245,246,247,.85)),
+    linear-gradient(180deg, rgba(255,255,255,.40), rgba(234,243,239,.90)),
     url("/images/footer-desktop.jpg");
   background-size: cover;
   background-position: center;
@@ -89,7 +98,7 @@ html, body{
 @media (max-width: 640px){
   .footer-bg{
     background-image:
-      linear-gradient(180deg, rgba(255,255,255,.35), rgba(245,246,247,.88)),
+      linear-gradient(180deg, rgba(255,255,255,.35), rgba(234,243,239,.92)),
       url("/images/footer-mobile.jpg");
     background-size: cover;
     background-position: center;
@@ -100,7 +109,7 @@ html, body{
 /* === UI Helpers === */
 .badge{
   border: 1px solid var(--line);
-  background: rgba(255,255,255,.75);
+  background: rgba(255,255,255,.80);
   backdrop-filter: blur(10px);
   border-radius: 9999px;
   padding: .5rem .8rem;
@@ -112,7 +121,7 @@ html, body{
 
 .card{
   border: 1px solid var(--line);
-  background: rgba(255,255,255,.78);
+  background: rgba(255,255,255,.86);
   backdrop-filter: blur(10px);
   border-radius: 1.5rem;
   box-shadow: var(--shadow);
@@ -123,7 +132,7 @@ html, body{
   padding: .9rem 1.15rem;
   font-weight: 700;
   letter-spacing: -.01em;
-  transition: transform .15s ease, opacity .15s ease, box-shadow .15s ease;
+  transition: transform .15s ease, opacity .15s ease, box-shadow .15s ease, background .15s ease, border-color .15s ease;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -132,6 +141,7 @@ html, body{
 }
 .btn:active{ transform: translateY(1px); }
 
+/* Botón principal: WhatsApp verde */
 .btn-primary{
   background: var(--wa);
   color: #ffffff;
@@ -145,36 +155,37 @@ html, body{
   background: var(--waActive);
 }
 
+/* Botón secundario: borde WhatsApp */
 .btn-ghost{
   border: 1px solid rgba(37,211,102,.55);
-  background: rgba(255,255,255,.78);
+  background: rgba(255,255,255,.82);
   color: var(--waActive);
 }
 .btn-ghost:hover{
-  border-color: rgba(37,211,102,.75);
-  background: rgba(37,211,102,.08);
+  border-color: rgba(37,211,102,.80);
+  background: rgba(37,211,102,.09);
   opacity: 1;
 }
-
 
 .input{
   width: 100%;
   border-radius: 1rem;
   border: 1px solid rgba(15,23,42,.14);
-  background: rgba(255,255,255,.86);
+  background: rgba(255,255,255,.92);
   color: rgba(15,23,42,.95);
   padding: .9rem 1rem;
   outline: none;
 }
 .input::placeholder{ color: rgba(71,85,105,.70); }
 .input:focus{
-  .btn:focus-visible,
+  border-color: rgba(42,92,88,.45);
+  box-shadow: 0 0 0 4px rgba(42,92,88,.14);
+}
+
+/* Focus visible (ARREGLADO: va fuera de .input:focus) */
+.btn:focus-visible,
 a:focus-visible,
 button:focus-visible{
   outline: none;
   box-shadow: 0 0 0 4px var(--waRing);
-}
-
-  border-color: rgba(11,59,46,.45);
-  box-shadow: 0 0 0 4px rgba(11,59,46,.12);
 }
