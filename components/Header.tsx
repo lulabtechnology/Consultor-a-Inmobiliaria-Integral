@@ -49,10 +49,11 @@ export default function Header({
               {lang === "es" ? "ES" : "EN"}
             </button>
 
-            <a className="btn btn-primary px-3 py-2 text-xs" href={links.wa} target="_blank" rel="noreferrer">
-              <Phone className="h-4 w-4" />
-              WhatsApp
-            </a>
+          <a className="btn btn-wa px-3 py-2 text-xs" href={links.wa} target="_blank" rel="noreferrer">
+  <Phone className="h-4 w-4" />
+  WhatsApp
+</a>
+
           </div>
         </div>
 
