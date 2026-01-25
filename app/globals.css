@@ -201,3 +201,10 @@ button:focus-visible{
 .btn-wa:focus-visible{
   box-shadow: 0 0 0 4px var(--waRing);
 }
+.hero-wrap h1{
+  text-shadow: 0 10px 28px rgba(0,0,0,.28);
+}
+.hero-wrap p{
+  text-shadow: 0 8px 22px rgba(0,0,0,.18);
+}
+
