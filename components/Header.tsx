@@ -19,7 +19,8 @@ export default function Header({
         <div className="flex items-center justify-between gap-3">
           <a href="#top" className="flex items-center gap-3 min-w-0">
             {/* LOGO */}
-            <div className="h-10 w-10 shrink-0 overflow-hidden rounded-2xl border border-[rgba(15,23,42,.10)] bg-white">
+            <div className="h-12 w-12 sm:h-10 sm:w-10 shrink-0 overflow-hidden rounded-2xl border border-[rgba(15,23,42,.10)] bg-white">
+
               <img
                 src="/images/logo.png"
                 alt="Logo"
