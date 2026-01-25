@@ -166,6 +166,13 @@ html, body{
 }
 .input::placeholder{ color: rgba(71,85,105,.70); }
 .input:focus{
+  .btn:focus-visible,
+a:focus-visible,
+button:focus-visible{
+  outline: none;
+  box-shadow: 0 0 0 4px var(--waRing);
+}
+
   border-color: rgba(11,59,46,.45);
   box-shadow: 0 0 0 4px rgba(11,59,46,.12);
 }
