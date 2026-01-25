@@ -13,7 +13,7 @@
   --muted: #475569;
   --line: rgba(15,23,42,.12);
 
-  /* Marca (verde fuerte que pediste) */
+  /* Marca (verde fuerte) */
   --brand: #2a5c58;        /* verde bosque/cian oscuro */
   --brandHover: #234f4b;
   --brandActive: #1d423f;
@@ -24,9 +24,10 @@
   --waActive: #1AA64F;
   --waRing: rgba(37, 211, 102, .22);
 
-  /* Marca ring */
+  /* Rings */
   --brandRing: rgba(42, 92, 88, .20);
 
+  /* Shadow */
   --shadow: 0 18px 50px rgba(2,6,23,.08);
 }
 
@@ -48,30 +49,34 @@ html, body{
 }
 
 /* =========================================================
-   HERO: que se vea MÁS la foto (menos overlay blanco)
+   HERO: que se vea MÁS la foto (menos overlay)
    ========================================================= */
 .hero-wrap{
   position: relative;
   overflow: hidden;
 }
 
-/* Desktop HERO */
+/* Si en algún momento el hero se ve muy bajito */
 .hero-bg{
+  /* Asegura presencia visual del hero */
+  min-height: 520px;
+
   background-image:
-    /* Oscurecimiento MUY leve para que el texto se lea sin lavar la foto */
-    linear-gradient(180deg, rgba(0,0,0,.18), rgba(0,0,0,.10)),
+    /* overlay oscuro SUAVE para legibilidad SIN lavar la foto */
+    linear-gradient(180deg, rgba(0,0,0,.14), rgba(0,0,0,.06)),
     url("/images/hero-desktop.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 
-
 /* Mobile HERO */
 @media (max-width: 640px){
   .hero-bg{
+    min-height: 560px;
+
     background-image:
-      linear-gradient(180deg, rgba(0,0,0,.20), rgba(0,0,0,.12)),
+      linear-gradient(180deg, rgba(0,0,0,.16), rgba(0,0,0,.08)),
       url("/images/hero-mobile.jpg");
     background-size: cover;
     background-position: center;
@@ -79,12 +84,20 @@ html, body{
   }
 }
 
+/* Text shadow SOLO dentro del hero (para que la foto se vea clara y el texto no se pierda) */
+.hero-wrap h1{
+  text-shadow: 0 10px 28px rgba(0,0,0,.28);
+}
+.hero-wrap p{
+  text-shadow: 0 8px 22px rgba(0,0,0,.18);
+}
+
 /* =========================================================
-   FOOTER: se mantiene con imagen (si lo estás usando así)
+   FOOTER: imagen visible
    ========================================================= */
 .footer-bg{
   background-image:
-    linear-gradient(180deg, rgba(255,255,255,.35), rgba(255,255,255,.85)),
+    linear-gradient(180deg, rgba(255,255,255,.35), rgba(255,255,255,.88)),
     url("/images/footer-desktop.jpg");
   background-size: cover;
   background-position: center;
@@ -93,8 +106,11 @@ html, body{
 @media (max-width: 640px){
   .footer-bg{
     background-image:
-      linear-gradient(180deg, rgba(255,255,255,.35), rgba(255,255,255,.88)),
+      linear-gradient(180deg, rgba(255,255,255,.35), rgba(255,255,255,.90)),
       url("/images/footer-mobile.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
   }
 }
 
@@ -103,7 +119,7 @@ html, body{
    ========================================================= */
 .badge{
   border: 1px solid var(--line);
-  background: rgba(255,255,255,.86);
+  background: rgba(255,255,255,.90);
   backdrop-filter: blur(10px);
   border-radius: 9999px;
   padding: .5rem .8rem;
@@ -115,7 +131,7 @@ html, body{
 
 .card{
   border: 1px solid var(--line);
-  background: rgba(255,255,255,.92);
+  background: rgba(255,255,255,.94);
   backdrop-filter: blur(10px);
   border-radius: 1.5rem;
   box-shadow: var(--shadow);
@@ -135,7 +151,7 @@ html, body{
 }
 .btn:active{ transform: translateY(1px); }
 
-/* BOTÓN MARCA (para todo lo que NO sea WhatsApp) */
+/* BOTÓN MARCA (para TODO lo que NO sea WhatsApp) */
 .btn-primary{
   background: var(--brand);
   color: #ffffff;
@@ -166,7 +182,7 @@ html, body{
 /* Ghost: estilo neutro de marca */
 .btn-ghost{
   border: 1px solid rgba(42,92,88,.45);
-  background: rgba(255,255,255,.92);
+  background: rgba(255,255,255,.94);
   color: var(--brand);
 }
 .btn-ghost:hover{
@@ -179,7 +195,7 @@ html, body{
   width: 100%;
   border-radius: 1rem;
   border: 1px solid rgba(15,23,42,.14);
-  background: rgba(255,255,255,.94);
+  background: rgba(255,255,255,.96);
   color: rgba(15,23,42,.95);
   padding: .9rem 1rem;
   outline: none;
@@ -190,21 +206,14 @@ html, body{
   box-shadow: 0 0 0 4px var(--brandRing);
 }
 
-/* Focus visible (correcto) */
+/* Focus visible */
 .btn:focus-visible,
 a:focus-visible,
 button:focus-visible{
   outline: none;
   box-shadow: 0 0 0 4px var(--brandRing);
 }
-/* Focus especial para WhatsApp (si quieres que sea verde WA) */
+/* Focus especial WhatsApp */
 .btn-wa:focus-visible{
   box-shadow: 0 0 0 4px var(--waRing);
 }
-.hero-wrap h1{
-  text-shadow: 0 10px 28px rgba(0,0,0,.28);
-}
-.hero-wrap p{
-  text-shadow: 0 8px 22px rgba(0,0,0,.18);
-}
-
