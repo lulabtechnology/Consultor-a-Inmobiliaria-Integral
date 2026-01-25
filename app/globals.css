@@ -58,29 +58,24 @@ html, body{
 /* Desktop HERO */
 .hero-bg{
   background-image:
-    /* tinte leve de marca (para que se vea pro, sin oscurecer demasiado) */
-    radial-gradient(900px 600px at 20% 25%, rgba(42,92,88,.22), transparent 60%),
-    radial-gradient(900px 600px at 85% 10%, rgba(42,92,88,.14), transparent 65%),
-
-    /* overlay blanco MUCHO MÁS ligero (antes estaba muy fuerte y “lavaba” la imagen) */
-    linear-gradient(180deg, rgba(255,255,255,.34), rgba(255,255,255,.70)),
-
-    /* imagen */
+    /* Oscurecimiento MUY leve para que el texto se lea sin lavar la foto */
+    linear-gradient(180deg, rgba(0,0,0,.18), rgba(0,0,0,.10)),
     url("/images/hero-desktop.jpg");
-
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 
+
 /* Mobile HERO */
 @media (max-width: 640px){
   .hero-bg{
     background-image:
-      radial-gradient(700px 520px at 50% 20%, rgba(42,92,88,.22), transparent 62%),
-      radial-gradient(700px 520px at 50% 0%, rgba(42,92,88,.14), transparent 68%),
-      linear-gradient(180deg, rgba(255,255,255,.30), rgba(255,255,255,.72)),
+      linear-gradient(180deg, rgba(0,0,0,.20), rgba(0,0,0,.12)),
       url("/images/hero-mobile.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
   }
 }
 
