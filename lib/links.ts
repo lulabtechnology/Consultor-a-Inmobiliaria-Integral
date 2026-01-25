@@ -3,7 +3,7 @@ export const links = {
   phoneE164: "50764746565",
 
   // Recomendado (compatible): dominio sin tilde
-  email: "clelia@consultoriainmobiliariaintegral.com",
+  email: "clelia@inmobiliariaintegral.com",
 
   website: "www.inmobiliaria24panama.com",
 
