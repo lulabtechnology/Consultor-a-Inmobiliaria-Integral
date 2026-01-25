@@ -3,9 +3,9 @@ export const links = {
   phoneE164: "50764746565",
 
   // Recomendado (compatible): dominio sin tilde
-  email: "clelia@inmobiliariaintegral.com",
+  email: "clelia@inmobiliariaintegral.org",
 
-  website: "www.inmobiliaria24panama.com",
+  website: "www.inmobiliariaintegral.org/",
 
   
   instagram: "https://www.instagram.com/invites/contact/?utm_source=ig_contact_invite&utm_medium=copy_link&utm_content=rhnjy0c",
