@@ -76,7 +76,8 @@ export default function Hero({ lang, t }: { lang: "es" | "en"; t: any }) {
                   <img
                     src="/images/profile.jpg"
                     alt="Foto de perfil"
-                    className="h-[320px] w-full object-cover"
+                    className="w-full aspect-[4/5] object-cover"
+
                     loading="lazy"
                   />
                 </div>
